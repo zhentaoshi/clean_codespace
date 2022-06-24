@@ -26,3 +26,5 @@ COPY library-scripts/jupyter_notebook_config.py /home/$NB_USER/.jupyter/
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
 USER jovyan
+
+RUN R -e "install.packages(c('languageserver','jsonlite'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
